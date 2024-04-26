@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Registration</title>
+    <link href="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" rel="icon">
+    <link rel="icon" href="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" type="image/png">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <style>
+        body {
+          background-color: #ffffff; /* Changed to white */
+          padding-top: 80px;
+          margin:20px;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #000000; /* Changed link color to black */
+          }
+          body.dark-mode {
+            background-color: #1e1e1e; /* Dark background */
+            color: #ffffff; /* White text color */
+        }
+        section .section {
+            margin-top: 400px;
+            text-align: left;
+            margin-left: -600px;
+            margin-right: 400px;
+        }
+      </style>
+    </head>
+<body>  
+
+    {% block content %}
+    {% endblock content %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const darkModeSwitch = document.getElementById('darkModeSwitch');
+  darkModeSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+</body>
+</html> 

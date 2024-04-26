@@ -1,0 +1,89 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href=""><img src="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" alt="Connectus" ></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+      <label class="custom-control-label" for="darkModeSwitch">Dark Mode</label>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Welcome to Our Website</h1>
+  <p>This is the content of your home page.</p>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <!-- Content before the section -->
+        </div>
+      </div>
+      <div class="row">
+              <h2>Connectus</h2>
+              <p>Connectus is a cutting-edge social platform designed to connect people worldwide through shared interests, meaningful conversations, and collaborative projects. With its intuitive interface and diverse range of features, ConnectUs aims to foster genuine connections, facilitate knowledge exchange, and inspire creativity in its community.
+
+              </p>
+          </div>
+      
+          <section>
+            <div class="container">
+              <div class="section">
+                <div class="row">
+                <h2>Programming:<h2>
+                  <div class="col">
+                  <h5> ConnectUs is built on a robust programming framework that incorporates the latest technologies and best practices in software development. Key programming languages and technologies used in developing.</h5>
+                  <h5>A personalized news feed featuring updates from friends, groups, and followed accounts.
+                  </h5>   
+                  <h5>Trending topics and popular discussions across the platform.</h5>  
+                  <h5>Recommendations for groups, events, and content based on user preferences and activity.</h5>  
+                  <h5>Tools for organizing and managing events, polls, and fundraisers.</h5>  
+                  <h5>Integration with other social media platforms for seamless sharing and cross-platform connectivity.</h5>  
+                </div>
+              </section>
+  
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="log-out">
+
+<a style="position: fixed; color: orange;" href="{% url "base:logout" %}">LogOut</a>
+</div>
+{% endblock content %}
+
+</body>
+
+
+</html>
+
+
+
+
