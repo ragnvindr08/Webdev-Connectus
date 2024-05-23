@@ -1,40 +1,91 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Registration</title>
-    <link href="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" rel="icon">
-    <link rel="icon" href="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" type="image/png">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectus Login</title>
+  <link href="/images/icon1.png" rel="icon">
+  <link rel="icon" href="/images/icon1.png" type="image/png">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
     <style>
+
+
         body {
-          background-color: #ffffff; /* Changed to white */
+          background-color: #efefef; /* Changed to white */
           padding-top: 80px;
-          margin:20px;
+          margin:60px;
+          margin-left: 160px; /* Same as the width of the sidenav */
+          font-size: 20px; /* Increased text to enable scrolling */
+          padding: 0px 10px;
         }
+
         .navbar-dark .navbar-nav .nav-link {
-            color: #000000; /* Changed link color to black */
+           
+            color: white; /* Changed link color to black */
           }
           body.dark-mode {
             background-color: #1e1e1e; /* Dark background */
             color: #ffffff; /* White text color */
         }
-        section .section {
-            margin-top: 400px;
-            text-align: left;
-            margin-left: -600px;
-            margin-right: 400px;
+        
+        .sidenav {
+          margin-top:50px;
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+         top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
         }
+  
+  .sidenav a {
+    
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  .gradient-text {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-image: url("/static/css/images/slide2.jpg");
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: Impact, sans-serif;
+  font-size: 24px; /* Adjust font size as needed */
+  text-transform: uppercase; /* Capitalize all letters */
+  animation: animateBackground 20s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0; /* Adjust background movement direction as needed */
+  }
+}
       </style>
     </head>
 <body>  
 
+ 
     {% block content %}
     {% endblock content %}
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

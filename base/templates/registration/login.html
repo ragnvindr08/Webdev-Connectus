@@ -1,14 +1,127 @@
-<body style="color: #2b2b2b;background-size:cover; background-image: url('https://github.com/ragnvindr08/imagesrc/blob/main/wp13261216-pc-city-wallpapers.png?raw=true');">
-<header class="black-header">
-    <h1>Connectus</h1>
-    <p>Future Social Platform</p>
-  </header>
+<body style=" filter: grayscale(15%); background-color: #2b2b2b; background-image: url('/static/css/images/connect.png');background-size:cover; ');">
+ 
+<style>
+   .slideshow-container {
+    max-width: 720px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: auto;
+    margin-right: 50px;
+    /* Initial box shadow */
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.9);
+    padding-bottom:-20px;
+    margin-left: -100px;
+    filter: grayscale(30%);
+}
+
+/* Responsive box shadow */
+@media (max-width: 768px) {
+    .slideshow-container {
+      box-shadow: 30px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+  .slide {
+    float: left; /* Float images to the left */
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .black-header h1  {
+    filter: grayscale(none);
+    background-image: url("/static/css/images/background1.jpg");
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: Impact, sans-serif;
+    font-size: 35px; /* Adjust font size as needed */
+   
+    animation: animateBackground 5s linear infinite; /* Adjust animation duration as needed */
+  }
+  
+  @keyframes animateBackground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0; /* Adjust background movement direction as needed */
+    }
+  }
+  .black-header p  {
+   
+    background-image: url("/static/css/images/background1.jpg");
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: Impact, sans-serif;
+    font-size: 13px; /* Adjust font size as needed */
+    
+    animation: animateBackground 40s linear infinite; /* Adjust animation duration as needed */
+  }
+  
+  @keyframes animateBackground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0; /* Adjust background movement direction as needed */
+    }
+  }
+</style>
+  <body>
+   
+    <div style="background: linear-gradient(to right, #8a4920d8, #2322228a);" class="slideshow-container">
+      
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">Social Platforms</h5>
+        <img src="/static/css/images/img1.jpg" alt="Slide 1">
+      </div>
+    
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">Welcome to ConnectUs</h5>
+        <img src="/static/css/images/connect.png" alt="Slide 2">
+      </div>
+    
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">ConnectUs Progress</h5>
+        <img src="/static/css/images/progress.png" alt="Slide 3">
+      </div>
+    </div>
+    
+
+    <body>
+      <header class="black-header">
+        <h1>ConnectUs</h1>
+        <p >Internet Social Platform</p>
+      </header>
+      
+      <script>
+        var slideIndex = 0;
+        showSlides();
+      
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("slide");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          slides[slideIndex-1].style.display = "block";
+          setTimeout(showSlides, 4000); // Change image every 2 seconds
+        }
+      </script>
 {% extends "base.html" %}
 {% block content %}
 <div class="shadow-wrap">
  <div class="form-wrap">  
     
 <form method="POST">
+  <a style="margin-top:-50px;margin-left:-50px;margin-bottom:50px;"  class="navbar-brand" href=""><img style="width:auto; height:30px;" src="/static/css/images/logo.png" alt="Connectus"></a>
     {% csrf_token %}
     {{form}}
     <button type="submit">Submit</button>
@@ -17,4 +130,5 @@
 </div>  
 </div>    
 {% endblock content %}
+
 

@@ -2,65 +2,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Connectus</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href=""><img src="https://github.com/ragnvindr08/imagesrc/blob/main/logo.png?raw=true" alt="Connectus" ></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Settings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
-      </li>
-    </ul>
-    <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
-      <label class="custom-control-label" for="darkModeSwitch">Dark Mode</label>
-    </div>
+  <style>
+    .search-bar {
+      position: absolute;
+      top: 94%; /* Adjust the top position as needed */
+      left: 33%;
+      transform: translateX(-50%);
+      background-color: #2b2b2b;
+      padding: 10px 5px ; /* Long padding on left and right */
+      width: 100%;
+      max-width: 550px; /* Limiting the maximum width */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 999; /* Ensure the search bar is above other content */
+      display: flex; /* Enable flexbox */
+      align-items: center; /* Center vertically */
+      justify-content: space-between; /* Distribute items evenly */
+      border-radius: 5px;
+      margin-left:3px;
+      
+    
+  }
+
+  /* Styles for the input */
+  .search-bar input[type="text"] {
+      flex: 1; /* Take remaining space */
+      padding: 3px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+
+  }
+
+  /* Styles for the button */
+  .search-bar button {
+      width: 80px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: #fff;
+      cursor: pointer;
+      font-size:70%;
+     
+    
+  }
+
+  .slideshow-container {
+    max-width: 1280px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: auto;
+    margin-right: 50px;
+    /* Initial box shadow */
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.9);
+    padding-bottom:-20px;
+    filter: grayscale(30%);
+}
+
+/* Responsive box shadow */
+@media (max-width: 768px) {
+    .slideshow-container {
+     display:none;
+    }
+}
+
+  .slide {
+    float: center; /* Float images to the left */
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 0;
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  .slide:hover::before {
+    background: linear-gradient(rgba(43, 43, 43, 0.5), rgba(43, 43, 43, 0.5)); /* Gradient with 30% opacity */
+  }
+</style>
+  <body>
+   
+   <div>
+    ConnectUs News:
+    <div class="search-bar"><img style="width:auto; height:37px;" src="/static/css/images/logo.png" alt="Connectus">
+      <input type="text" placeholder="Search News...">
+      <button type="submit">Search</button>
   </div>
-</nav>
-
-<div class="container">
-  <h1>Welcome to Our Website</h1>
-  <p>This is the content of your home page.</p>
-</div>
-<div class="container">
-  <div class="row">
-      <div class="col">
-          <!-- Content before the section -->
-        </div>
+    <div style="background-color: #2b2b2b;" class="slideshow-container">
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">ConnectUs Progress Development</h5>
+        <img src="/static/css/images/progress.png" alt="Slide 1">
       </div>
-      <div class="row">
-              <h2>Connectus</h2>
-              <p>Connectus is a cutting-edge social platform designed to connect people worldwide through shared interests, meaningful conversations, and collaborative projects. With its intuitive interface and diverse range of features, ConnectUs aims to foster genuine connections, facilitate knowledge exchange, and inspire creativity in its community.
+    
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">Global Games Developement News</h5>
+        <img src="/static/css/images/background2.jpg" alt="Slide 2">
+      </div>
+    
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">Social Platforms</h5>
+        <img  src="/static/css/images/img1.jpg" alt="Slide 3">
+      </div>
 
-              </p>
-          </div>
+      <div class="slide">
+        <h5 style="color: white; margin-left: 10px;">ConnectUs</h5>
+        <img  src="/static/css/images/connect.png" alt="Slide 4">
+        
+      </div>
+      
+    </div
+    
+    <body>
+      
+      <script>
+        var slideIndex = 0;
+        showSlides();
+      
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("slide");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          slides[slideIndex-1].style.display = "block";
+          setTimeout(showSlides, 4000); // Change image every 2 seconds
+        }
+      </script>
+    </div>
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    
+    <a  class="navbar-brand" href=""><img style="width:auto; height:40px;" src="/static/css/images/logo.png" alt="Connectus"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> <!-- Added justify-content-end class -->
+      <ul style="font-size:15px;" class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/registrations/signup.html">Sign Up</a>
+        </li>
+      </ul>
+      <div class="custom-control custom-switch ml-lg-2"> <!-- Added ml-lg-2 class for margin -->
+        <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+        <label class="custom-control-label" for="darkModeSwitch">Dark Mode</label>
+      </div>
+      
+    </div>
+  </nav>
+
+  <div class="sidenav"> 
+    <a href="#about">Developers</a>
+    <a href="#services">Connections</a>
+    <a href="#clients">News and Updates</a>
+    <a href="#contact">Community</a>
+    <a href="#clients">Friends</a>
+    <a href="#contact">Messages</a>
+    <a href="#clients">Privacy</a>
+    <a href="#contact">About</a>
+    <a href="#clients">Settings</a>
+    
+  </div>
+
+<div>
+<div class="container">
+  <h1></h1>
+  <p></p>
+</div>
+
       
           <section>
             <div class="container">
               <div class="section">
                 <div class="row">
-                <h2>Programming:<h2>
+                <h2>Objectives<h2>
                   <div class="col">
-                  <h5> ConnectUs is built on a robust programming framework that incorporates the latest technologies and best practices in software development. Key programming languages and technologies used in developing.</h5>
-                  <h5>A personalized news feed featuring updates from friends, groups, and followed accounts.
-                  </h5>   
+                  <h5> At ConnectUs, our mission is to create a vibrant online community where people can come together, connect, and build meaningful relationships through shared experiences. Whether you're bonding over thrilling games, engaging with diverse content, or forging new friendships on social media, ConnectUs is your ultimate destination for fun and connection. Join us to discover new connections, share memorable moments, and celebrate the power of friendship in an inclusive and welcoming environment. Together, let's explore the endless possibilities of connection and create lasting bonds that enrich our lives.
+                  </h5><br>   
                   <h5>Trending topics and popular discussions across the platform.</h5>  
                   <h5>Recommendations for groups, events, and content based on user preferences and activity.</h5>  
                   <h5>Tools for organizing and managing events, polls, and fundraisers.</h5>  
@@ -68,15 +216,24 @@
                 </div>
               </section>
   
-
-
+              
+</div>
 {% extends "base.html" %}
+
 {% block content %}
 
-<div class="log-out">
+<div class="log-out">  
 
-<a style="position: fixed; color: orange;" href="{% url "base:logout" %}">LogOut</a>
+  <a href="{% url 'base:logout' %}" style="position: fixed; color: white; background-image: linear-gradient(to right, #0c0c14, black); text-decoration: none; padding: 10px 20px; border-radius: 5px; transition: color 0.3s, background-color 0.3s;" onmouseover="this.style.color='red'; this.style.backgroundColor='white'" onmouseout="this.style.color='white'; this.style.backgroundColor='transparent'">User Out</a>
+
 </div>
+
+<div class="gradient-text">
+  <h4>Welcome, {{ user.username }} <img style="width:20px; height;20px; margin-top: -10px;" src="/static/css/images/verified.png" alt="icon"> </h4>  <!--base.html nakakonek-->
+
+
+</div>
+
 {% endblock content %}
 
 </body>

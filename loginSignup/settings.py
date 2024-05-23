@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base',
+    'base',     
+    
 ]
+
+    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,3 +132,8 @@ LOGOUT_REDIRECT_URL = "base:login"
 CSRF_TRUSTED_ORIGINS = [
    'https://f02c-2405-8d40-4440-6e11-216-3eff-fe3c-7851.ngrok-free.app',
 ]
+
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
